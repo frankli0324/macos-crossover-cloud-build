@@ -13,7 +13,8 @@ brew --version
 
 brew install \
     freetype \
-    bison
+    bison \
+    mingw-w64
     
 export PATH="$(brew --prefix bison)/bin:$PATH"
 bison --version
@@ -30,7 +31,7 @@ cd clang/llvm
 mkdir build
 cd build
 cmake ../
-make
+make -j8
 cd bin
 export PATH="$(pwd):$PATH"
 cd ../../../..
@@ -43,7 +44,7 @@ cd clang/clang
 mkdir build
 cd build
 cmake ../
-make
+make -j8
 cd bin
 export PATH="$(pwd):$PATH"
 cd ../../../..
